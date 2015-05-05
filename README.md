@@ -49,7 +49,7 @@ Instructions
 
    ```
    git clone https://github.com/jbossdemocentral/continuous-delivery-demo.git
-   cd openshift-cd-demo
+   cd continuous-delivery-demo
    ```
 
 3. Start the containers
@@ -64,4 +64,7 @@ Instructions
 5. Go to jobs list and start the _ticket-monster-build_ job.
 6. Go to the _Delivery Pipeline_ tab to see how the build progresses in the delivery pipeline.
 
-There is a sreencast available on [Vimeo](https://vimeo.com/113075954) demonstrating the above setup.
+## Recognitions
+Special thanks to my collegue Siamak Sadeghianfar, who wrote the OpenShift Jenkins plugin and who implemented most of this demo.
+
+
