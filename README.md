@@ -52,17 +52,27 @@ Instructions
    cd continuous-delivery-demo
    ```
 
-3. Start the containers
+3. Replace the `smx` domain with the one you created on  openshift: 
+
+    ```
+    grep -r 'smx' jenkins-ci/
+    sed -i "s/smx/$YOURDOMAIN/g" jenkins-ci/config/job-deploy-*.xml
+    
+    ```
+
+4. Start the containers
+
    ```
    docker-compose up -d
    ```
+
    This step will download the required Docker images from Docker registery and start Jenkins, Nexus and Sonar containers. Depending on your internet connection, it might take some minutes.
-4. Browse to http://DOCKER_HOST:8080/jenkins and go to _Manage Jenkins > Configure System_. Scroll down to _OpenShift_ section and enter your OpenShift configs. If using OpenShift Online, enter your username and password in the respective textboxes. If using OpenShift Enterprise, also enter the address to your broker. Click on "Check Login" to validate your username and password. If successfull, click on "Upload SSH Public Key" to upload the Jenkins SSH keys to OpenShift.
+5. Browse to http://DOCKER_HOST:8080/jenkins and go to _Manage Jenkins > Configure System_. Scroll down to _OpenShift_ section and enter your OpenShift configs. If using OpenShift Online, enter your username and password in the respective textboxes. If using OpenShift Enterprise, also enter the address to your broker. Click on "Check Login" to validate your username and password. If successfull, click on "Upload SSH Public Key" to upload the Jenkins SSH keys to OpenShift.
 
   ![Jenkins Config](https://raw.githubusercontent.com/jbossdemocentral/continuous-delivery-demo/master/images/jenkins-config.png)
 
-5. Go to jobs list and start the _ticket-monster-build_ job.
-6. Go to the _Delivery Pipeline_ tab to see how the build progresses in the delivery pipeline.
+6. Go to jobs list and start the _ticket-monster-build_ job.
+7. Go to the _Delivery Pipeline_ tab to see how the build progresses in the delivery pipeline.
 
 ## Recognitions
 Special thanks to my collegue Siamak Sadeghianfar, who wrote the OpenShift Jenkins plugin and who implemented most of this demo.
