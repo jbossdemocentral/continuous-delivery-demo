@@ -1,0 +1,10 @@
+title: Continuous delivery demo using JBoss EAP
+github_repo_url: https://github.com/jbossdemocentral/continuous-delivery-demo
+technologies:
+  - Jenkins
+  - Nexus
+  - Sonar
+summary: This demo sets up a complete Continuous Delivery environment running in Docker containers and uses OpenShift as the deployment environment. As the artifact moves forward in the delivery pipeline, new containers (gears) are created on OpenShift and the artifact gets deployed onto these containers which represent Dev, System Test, Performance Test and Pre-Production environments.
+level: Advanced
+product: eap
+author: Thomas Qvarnstrom & Siamak Sadeghianfar
